@@ -10,6 +10,10 @@
  
   // 中心点の緯度経度（福井県立恐竜博物館）
   const lat = 36.0829218, lng = 136.5065619;
+  //ティラノサウルス広場の緯度経度
+  const lat2 = 36.08460621, lng2 = 136.50262056;
+  //かつやま恐竜の森の緯度経度
+  const lat3 = 36.08440084, lng3 = 136.50695369;
 
 
   // ZMALoader
@@ -40,14 +44,40 @@
         map.addControl(new ZDC.ScaleBar('bottom-left'));
 
         /* ★マーカーを作成 */
-             // 可愛い「〇」マーカーを作成
+             // トリケラトプスマーカーを作成
              mrk_widget = new ZDC.Marker(
                 new ZDC.LatLng(lat, lng),
                 {
                     custom: {
                         base: {
-                            imgSrc: 'dinosaur3r.gif',
+                            imgSrc: 'dinosaur5r.gif',
                             imgPos: new ZDC.Point(-30,-100),
+                            imgSize: new ZDC.Point(100,100),
+                        }
+                    }
+                }
+            );
+                   // ティラノサウルスマーカーを作成
+                   mrk_widget2 = new ZDC.Marker(
+                new ZDC.LatLng(lat2, lng2),
+                {
+                    custom: {
+                        base: {
+                            imgSrc: 'dinosaur3r.gif',
+                            imgPos: new ZDC.Point(-70,-120),
+                            imgSize: new ZDC.Point(100,100),
+                        }
+                    }
+                }
+            );
+                   // プテラノドンマーカーを作成
+                   mrk_widget3 = new ZDC.Marker(
+                new ZDC.LatLng(lat3, lng3),
+                {
+                    custom: {
+                        base: {
+                            imgSrc: 'dinosaur4r.gif',
+                            imgPos: new ZDC.Point(150,-100),
                             imgSize: new ZDC.Point(100,100),
                         }
                     }
@@ -55,6 +85,8 @@
             );
         /* ★マーカーを追加 */
         map.addWidget(mrk_widget);
+        map.addWidget(mrk_widget2);
+        map.addWidget(mrk_widget3);
 
       },
       function() {
